@@ -1,0 +1,2251 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+let posts = [];
+try {
+	const res = await fetch(
+		'http://soybogart.com/blog/wp-json/wp/v2/posts?_embed',
+	);
+	if (res.ok) {
+		posts = await res.json();
+	}
+} catch (e) {
+	console.warn('Could not fetch blog posts:', e);
+}
+---
+
+<Layout
+	title="Alberto Bogart - terapeuta de negocios 2026 - Be ready for tomorrow">
+	<nav class="navbar">
+		<div class="nav-content">
+			<a
+				href="#"
+				class="logo">
+				<img
+					src="assets/svg/LogoBogartWhite.svg"
+					alt="Alberto Bogart - terapeuta de negocios"
+				/>
+			</a>
+			<div class="nav-links">
+				<a href="#about">Trayectoria</a>
+				<a href="#blog">Blog</a>
+				<a href="#contact">Conozcamonos</a>
+			</div>
+		</div>
+	</nav>
+
+	<section
+		id="hero"
+		class="hero">
+		<div class="hero-bg">
+			<div class="grid-overlay"></div>
+			<div class="glow-orb orb-1"></div>
+			<div class="glow-orb orb-2"></div>
+		</div>
+		<div class="hero-content container">
+			<h1
+				class="display-1"
+				data-aos="fade-up"
+				data-aos-delay="100">
+				<span class="gradient-text">PREPÁRATE PARA</span>
+				<span
+					class="rotating-text"
+					data-words="EMPRENDER,CRECER,INNOVAR,TRANSFORMAR,AVANZAR"
+					>EMPRENDER</span
+				>
+			</h1>
+
+			<p
+				class="hero-description"
+				data-aos="fade-up"
+				data-aos-delay="300">
+				El estratega creativo y Terapeuta de Marcas que ayuda a los
+				emprendedores a dejar de improvisar. Brindo capacitaciones dinámicas,
+				consultoría 1:1 y diseño de estrategias de marketing donde el humanismo,
+				la creatividad y la innovación son el alma de cada resultado.
+			</p>
+		</div>
+	</section>
+
+	<section
+		id="about"
+		class="about">
+		<div class="container">
+			<div class="about-grid">
+				<div
+					class="about-image"
+					data-aos="fade-right">
+					<img
+						src="/assets/img/albertoBogart.webp"
+						alt="Bogart"
+					/>
+				</div>
+				<div
+					class="about-content"
+					data-aos="fade-left">
+					<span class="section-tag text-brand-primary">SOY BOGART</span>
+					<h2 class="text-brand-primary">
+						El estratega creativo y Terapeuta de Marcas que ayuda a los
+						emprendedores a dejar de improvisar.
+					</h2>
+					<p class="about-description">
+						Brindo capacitaciones dinámicas, consultoría 1:1 y diseño de
+						estrategias de marketing donde el humanismo, la creatividad y la
+						innovación son el alma de cada resultado.
+					</p>
+					<a
+						href="#servicios"
+						class="btn btn-primary"
+						>Ver Servicios</a
+					>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section
+		id="trayectoria"
+		class="trayectoria">
+		<div class="container">
+			<div
+				class="section-header"
+				data-aos="fade-up">
+				<span class="section-tag">Mi Trayectoria</span>
+				<h2>Números que <span class="gradient-text">Hablan</span></h2>
+			</div>
+			<div class="stats-grid">
+				<div
+					class="stat-card"
+					data-aos="zoom-in"
+					data-aos-delay="100">
+					<span
+						class="stat-number"
+						data-target="15"
+						>0</span
+					>
+					<span class="stat-label">Proyectos</span>
+				</div>
+				<div
+					class="stat-card"
+					data-aos="zoom-in"
+					data-aos-delay="200">
+					<span
+						class="stat-number"
+						data-target="200"
+						>0</span
+					>
+					<span class="stat-label">Capacitaciones</span>
+				</div>
+				<div
+					class="stat-card"
+					data-aos="zoom-in"
+					data-aos-delay="300">
+					<span
+						class="stat-number"
+						data-target="20"
+						>0</span
+					>
+					<span class="stat-label">Años de experiencia</span>
+				</div>
+				<div
+					class="stat-card"
+					data-aos="zoom-in"
+					data-aos-delay="400">
+					<span
+						class="stat-number"
+						data-target="50"
+						>0</span
+					>
+					<span class="stat-label">Marcas creadas</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section
+		id="servicios"
+		class="servicios">
+		<div class="container">
+			<div
+				class="section-header"
+				data-aos="fade-up">
+				<span class="section-tag">Mis Servicios</span>
+				<h2>Estrategia con <span class="gradient-text">Alma</span></h2>
+			</div>
+			<div class="servicios-grid">
+				<div
+					class="servicio-card"
+					data-num="01"
+					data-aos="fade-right"
+					data-aos-delay="100">
+					<h3>Capacitación Dinámica</h3>
+					<p>
+						Formación disruptiva para equipos y mentes inquietas que buscan
+						accionar el conocimiento.
+					</p>
+					<ul>
+						<li>Emprendimiento</li>
+						<li>Ventas</li>
+						<li>Planeación estratégica</li>
+						<li>Negocios digitales</li>
+					</ul>
+				</div>
+				<div
+					class="servicio-card"
+					data-num="02"
+					data-aos="fade-left"
+					data-aos-delay="150">
+					<h3>Consultoría Estratégica 1:1</h3>
+					<p>
+						Acompañamiento profundo para líderes y emprendedores que decidieron
+						dejar de improvisar.
+					</p>
+					<ul>
+						<li>Sesiones presenciales (GDL, CDMX, Bogotá)</li>
+						<li>Sesiones de 1.5 horas</li>
+						<li>Terapeuta de marca</li>
+						<li>Acompañamiento mensual</li>
+					</ul>
+				</div>
+				<div
+					class="servicio-card"
+					data-num="03"
+					data-aos="fade-right"
+					data-aos-delay="200">
+					<h3>Branding & Identidad</h3>
+					<p>Creación de marcas con esencia para conectar emocionalmente.</p>
+					<ul>
+						<li>Logotipo + identidad corporativa</li>
+						<li>Diseño publicitario</li>
+						<li>Creación de marcas comerciales</li>
+						<li>Registro y protección de marcas</li>
+					</ul>
+				</div>
+				<div
+					class="servicio-card"
+					data-num="04"
+					data-aos="fade-left"
+					data-aos-delay="250">
+					<h3>Marketing Digital & Contenido</h3>
+					<p>
+						Storytelling estratégico y presencia digital para convertir tu marca
+						en comunidad.
+					</p>
+					<ul>
+						<li>Foto-video comercial</li>
+						<li>Campañas Facebook e Instagram</li>
+						<li>Campañas Google + YouTube</li>
+						<li>Creación de contenido</li>
+					</ul>
+				</div>
+				<div
+					class="servicio-card"
+					data-num="05"
+					data-aos="fade-right"
+					data-aos-delay="300">
+					<h3>Web & E-commerce</h3>
+					<p>
+						Tu plaza digital de alto rendimiento, diseñada para vender 24/7.
+					</p>
+					<ul>
+						<li>Sitios web y tiendas en línea</li>
+						<li>Optimizados SEO/SEM</li>
+						<li>Sistemas y Apps</li>
+						<li>Código real (sin IA)</li>
+					</ul>
+				</div>
+				<div
+					class="servicio-card"
+					data-num="06"
+					data-aos="fade-left"
+					data-aos-delay="350">
+					<p>
+						Porque siempre hay buen puerto para quien sabe a dónde se dirige.
+					</p>
+					<ul>
+						<li>Digitalización de negocios</li>
+						<li>Diagnóstico y auditoría</li>
+						<li>Manuales internos</li>
+						<li>Herramientas de gestión</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="misEmprendimientos">
+		<div class="container">
+			<h1 class="text-brand-primary">Mis emprendimientos</h1>
+			<div class="emprendimiento-card">
+				<img
+					src="/assets/svg/logo-1.svg"
+					alt=""
+				/>
+			</div>
+			<div class="emprendimiento-card">
+				<img
+					src="/assets/svg/logo-2.svg"
+					alt=""
+				/>
+			</div>
+			<div class="emprendimiento-card">
+				<img
+					src="/assets/svg/logo-3.svg"
+					alt=""
+				/>
+			</div>
+			<div class="emprendimiento-card">
+				<img
+					src="/assets/svg/logo-4.svg"
+					alt=""
+				/>
+			</div>
+			<div class="emprendimiento-card">
+				<img
+					src="/assets/svg/logo-5.svg"
+					alt=""
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section
+		id="newsletter"
+		class="newsletter">
+		<div
+			class="newsletter-popup"
+			id="newsletter-popup">
+			<button
+				class="newsletter-close"
+				id="newsletter-close"
+				>&times;</button
+			>
+			<h2>SUSCRÍBETE A MI NEWSLETTER</h2>
+			<p>
+				Únete a miles de personas que semanalmente reciben contenido exclusivo
+			</p>
+			<form
+				class="newsletter-form"
+				id="newsletter-form">
+				<input
+					type="text"
+					name="nombre"
+					placeholder="Tu nombre"
+					required
+				/>
+				<input
+					type="email"
+					name="email"
+					placeholder="Tu email"
+					required
+				/>
+				<button
+					type="submit"
+					id="newsletter-submit"
+					class="btn btn-primary"
+					>REGÍSTRATE HOY</button
+				>
+			</form>
+		</div>
+	</section>
+
+	<section
+		id="collage"
+		class="collage">
+		<div class="collage-grid">
+			<!-- Image 1 -->
+			<div
+				class="collage-item"
+				style="margin: 0 -42px 20px 14px;"
+				data-scroll-speed="0.15"
+				data-reveal-delay="0">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-1.jpg"
+					alt="Alberto Bogart"
+				/>
+			</div>
+			<!-- Image 2 -->
+			<div
+				class="collage-item"
+				style="margin: -50px -42px 0 -14px;"
+				data-scroll-speed="0.25"
+				data-reveal-delay="100">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-2.jpg"
+					alt="Alberto Bogart"
+				/>
+			</div>
+			<!-- Image 3 -->
+			<div
+				class="collage-item"
+				style="margin: 50px -42px 0 -14px;"
+				data-scroll-speed="0.1"
+				data-reveal-delay="200">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-3.jpg"
+					alt="Alberto Bogart"
+				/>
+			</div>
+			<!-- Image 4 -->
+			<div
+				class="collage-item"
+				style="margin: 70px -100px 0 -14px;"
+				data-scroll-speed="0.3"
+				data-reveal-delay="300">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-4.jpg"
+					alt="Alberto Bogart"
+				/>
+			</div>
+			<!-- Image 5 -->
+			<div
+				class="collage-item"
+				style="margin: 100px 80px 0 -14px;"
+				data-scroll-speed="0.2"
+				data-reveal-delay="400">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-5.jpg"
+					alt="Alberto Bogart"
+				/>
+			</div>
+			<!-- Image 6 & 7 container -->
+			<div
+				class="collage-item"
+				style="margin: 0 -42px 0 -14px;"
+				data-scroll-speed="0.05"
+				data-reveal-delay="500">
+				<img
+					class="collage-img"
+					src="/assets/img/albertoBogart-6.jpg"
+					alt="Alberto Bogart"
+				/>
+				<div
+					class="collage-item"
+					style="margin: 0 -42px 0 -14px;"
+					data-scroll-speed="0.35"
+					data-reveal-delay="600">
+					<img
+						class="collage-img"
+						src="/assets/img/albertoBogart-7.jpg"
+						alt="Alberto Bogart"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div
+		id="contact"
+		class="contact-box"
+		data-aos="zoom-in">
+		<h2>¿Listo para el <span class="gradient-text">Futuro</span>?</h2>
+		<form
+			class="contact-form"
+			id="contact-form">
+			<input
+				type="text"
+				name="nombre"
+				placeholder="Tu nombre"
+				required
+			/>
+			<input
+				type="email"
+				name="email"
+				placeholder="Tu email"
+				required
+			/>
+
+			<button
+				type="submit"
+				id="contact-submit"
+				class="btn btn-primary"
+				>Registrarme</button
+			>
+		</form>
+	</div>
+
+	<section
+		id="blog"
+		class="blog-section">
+		<div class="container">
+			<h2 data-aos="fade-up">Entradas de Soy Bogart</h2>
+			{
+				posts.length > 0 ? (
+					<>
+						<article
+							class="featured-post"
+							data-aos="fade-up"
+							data-aos-delay="100">
+							<a href={`/blog/${posts[0].slug}`}>
+								<div class="featured-image">
+									<img
+										src={
+											posts[0]._embedded?.['wp:featuredmedia']?.[0]
+												?.source_url || '/assets/img/placeholder.jpg'
+										}
+										alt={posts[0].title.rendered}
+									/>
+								</div>
+								<div class="featured-content">
+									<span class="featured-badge">Más reciente</span>
+									<h3 set:html={posts[0].title.rendered} />
+									<div
+										class="blog-excerpt"
+										set:html={posts[0].excerpt.rendered}
+									/>
+									<span class="blog-read-more">Leer artículo completo →</span>
+								</div>
+							</a>
+						</article>
+
+						{posts.length > 1 && (
+							<div class="blog-grid">
+								{posts.slice(1).map((post, index) => (
+									<article
+										class="blog-card"
+										data-aos="fade-up"
+										data-aos-delay={150 + index * 50}>
+										<a href={`/blog/${post.slug}`}>
+											<div class="blog-image">
+												<img
+													src={
+														post._embedded?.['wp:featuredmedia']?.[0]
+															?.source_url || '/assets/img/placeholder.jpg'
+													}
+													alt={post.title.rendered}
+												/>
+											</div>
+											<h3 set:html={post.title.rendered} />
+											<div
+												class="blog-excerpt"
+												set:html={post.excerpt.rendered}
+											/>
+											<span class="blog-read-more">Leer más →</span>
+										</a>
+									</article>
+								))}
+							</div>
+						)}
+					</>
+				) : (
+					<p class="blog-loading">Cargando entradas del blog...</p>
+				)
+			}
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-brand">
+					<img
+						src="assets/svg/LogoBogartWhite.svg"
+						alt="Alberto Bogart - terapeuta de negocios"
+					/>
+					<p>Alberto Bogart - terapeuta de negocios 2026</p>
+				</div>
+
+				<div class="footer-social">
+					<a
+						href="https://www.youtube.com/@bogartalberto7109"
+						aria-label="Youtube">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							><path
+								d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+							></path></svg
+						>
+					</a>
+					<a
+						href="https://www.instagram.com/bogart_alberto/"
+						aria-label="Instagram">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							><rect
+								x="2"
+								y="2"
+								width="20"
+								height="20"
+								rx="5"
+								ry="5"
+							></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+							></path><line
+								x1="17.5"
+								y1="6.5"
+								x2="17.51"
+								y2="6.5"
+							></line></svg
+						>
+					</a>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>
+					© 2026 Alberto Bogart - terapeuta de negocios . Todos los derechos
+					reservados.
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<style>
+		@import '../styles/global.scss';
+
+		.gradient-text {
+			background: linear-gradient(
+				135deg,
+				var(--light),
+				var(--brand-primary-light)
+			);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+			padding: 1rem 2rem;
+			backdrop-filter: blur(10px);
+			background: #0600ff24;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+			.nav-content {
+				max-width: 1200px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo img {
+				filter: brightness(0) invert(1);
+			}
+
+			.logotipo {
+				mix-blend-mode: invert;
+			}
+
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+
+				a {
+					color: var(--lighter);
+					text-decoration: none;
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: var(--light);
+					}
+				}
+
+				.btn-nav {
+					background: var(--brand-primary);
+					color: white !important;
+					padding: 0.5rem 1rem;
+
+					&:hover {
+						background: var(--brand-primary-light);
+					}
+				}
+			}
+		}
+
+		.hero {
+			min-height: 100vh;
+			position: relative;
+			overflow: hidden;
+
+			.hero-bg {
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+			}
+
+			.hero-content {
+				position: relative;
+				z-index: 2;
+				text-align: center;
+				padding-top: 6rem;
+			}
+
+			.grid-overlay {
+				position: absolute;
+				inset: 0;
+				background-image:
+					linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
+				background-size: 50px 50px;
+			}
+
+			.glow-orb {
+				position: absolute;
+
+				filter: blur(100px);
+				opacity: 0.5;
+			}
+
+			.orb-1 {
+				width: 600px;
+				height: 600px;
+				background: var(--brand-primary);
+				top: -200px;
+				right: -200px;
+			}
+
+			.orb-2 {
+				width: 400px;
+				height: 400px;
+				background: var(--brand-primary-light);
+				bottom: -100px;
+				left: -100px;
+			}
+
+			.hero-content {
+				position: relative;
+				z-index: 1;
+				text-align: center;
+				padding-top: 6rem;
+			}
+
+			.badge {
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				background: rgba(37, 99, 235, 0.2);
+				border: 1px solid var(--brand-primary);
+
+				font-size: 0.875rem;
+				color: var(--brand-primary-light);
+				margin-bottom: 2rem;
+			}
+			h1 {
+				font-size: clamp(5em, 13vw, 9rem);
+				line-height: 1;
+				margin-bottom: 1rem;
+			}
+
+			.hero-tagline {
+				font-size: clamp(1.5rem, 4vw, 2.5rem);
+				color: var(--lighter);
+				margin-bottom: 1rem;
+			}
+
+			.hero-description {
+				font-size: 1.3rem;
+				color: var(--lighter);
+				max-width: 800px;
+				margin: 0 auto 2rem;
+			}
+
+			.hero-actions {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-bottom: 4rem;
+			}
+
+			.btn-primary {
+				background: var(--brand-primary);
+			}
+
+			.btn-secondary {
+				background: transparent;
+				border: 1px solid var(--lighter);
+
+				&:hover {
+					border-color: var(--brand-primary);
+					background: rgba(37, 99, 235, 0.1);
+				}
+			}
+
+			.hero-stats {
+				display: flex;
+				justify-content: center;
+				gap: 4rem;
+
+				.stat {
+					text-align: center;
+				}
+
+				.stat-number {
+					display: block;
+					font-size: 2.5rem;
+					font-weight: 700;
+					color: var(--brand-primary);
+				}
+
+				.stat-label {
+					color: var(--lighter);
+					font-size: 0.875rem;
+				}
+			}
+		}
+
+		.scroll-indicator {
+			position: absolute;
+			bottom: 2rem;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.5rem;
+			color: var(--lighter);
+			font-size: 0.75rem;
+
+			.mouse {
+				width: 24px;
+				height: 40px;
+				border: 2px solid var(--lighter);
+
+				position: relative;
+
+				.wheel {
+					width: 4px;
+					height: 8px;
+					background: var(--brand-primary);
+
+					position: absolute;
+					top: 8px;
+					left: 50%;
+					transform: translateX(-50%);
+					animation: scroll 1.5s infinite;
+				}
+			}
+		}
+
+		@keyframes scroll {
+			0% {
+				opacity: 1;
+				transform: translateX(-50%) translateY(0);
+			}
+			100% {
+				opacity: 0;
+				transform: translateX(-50%) translateY(12px);
+			}
+		}
+
+		.section-header {
+			text-align: center;
+			margin-bottom: 4rem;
+
+			.section-tag {
+				display: inline-block;
+				font-size: 0.875rem;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				margin-bottom: 1rem;
+			}
+
+			h2 {
+				font-size: clamp(2rem, 5vw, 3.5rem);
+			}
+		}
+
+		.text-dark {
+			color: var(--dark);
+		}
+
+		.text-brand-primary {
+			color: var(--brand-primary);
+		}
+
+		.text-brand-primary-light {
+			color: var(--brand-primary-light);
+		}
+
+		.text-light {
+			color: var(--light);
+		}
+
+		.about {
+			background: var(--light);
+
+			.about-grid {
+				display: grid;
+				grid-template-columns: 1fr 1.5fr;
+				gap: 4rem;
+				align-items: center;
+
+				@media (max-width: 768px) {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.about-image {
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+
+			.about-content {
+				.section-tag {
+					display: inline-block;
+					margin-bottom: 1rem;
+				}
+
+				h2 {
+					font-size: clamp(1.5rem, 3vw, 2.5rem);
+					margin-bottom: 1rem;
+					line-height: 1.4;
+				}
+
+				.about-description {
+					color: var(--lighter);
+					font-size: 1.1rem;
+					margin-bottom: 1.5rem;
+					line-height: 1.6;
+				}
+
+				.btn {
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		.trayectoria {
+			background: var(--brand-primary-light);
+			padding: 5em 0;
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 2rem;
+				max-width: 1000px;
+				margin: 0 auto;
+
+				@media (max-width: 768px) {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			.stat-card {
+				text-align: center;
+				padding: 2rem 1rem;
+				background: var(--light);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+
+				transition: all 0.3s ease;
+
+				&:hover {
+					border-color: var(--brand-primary-light);
+					transform: translateY(-5px);
+				}
+
+				.stat-number {
+					display: block;
+					font-size: 3rem;
+					font-weight: 700;
+					color: var(--brand-primary);
+					line-height: 1;
+				}
+
+				.stat-label {
+					display: block;
+					margin-top: 0.5rem;
+					color: var(--brand-primary);
+					font-size: 0.9rem;
+				}
+			}
+		}
+
+		.numberAnimation {
+			display: none;
+		}
+
+		.servicios {
+			background: var(--darker);
+			padding: 6rem 2rem;
+
+			.servicios-grid {
+				max-width: 800px;
+				margin: 0 auto;
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 20px;
+					top: 0;
+					bottom: 0;
+					width: 2px;
+					background: linear-gradient(
+						to bottom,
+						var(--brand-primary),
+						var(--brand-primary-light)
+					);
+				}
+			}
+
+			.servicio-card {
+				padding: 1rem 0 1rem 3rem;
+				position: relative;
+				background: transparent;
+				border: none;
+				margin-bottom: 1rem;
+
+				&::before {
+					content: attr(data-num);
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 40px;
+					height: 40px;
+					background: var(--brand-primary);
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-weight: 700;
+					font-size: 0.9rem;
+					z-index: 1;
+				}
+
+				&:hover {
+					transform: none;
+				}
+
+				h3 {
+					font-size: 1.25rem;
+					margin-bottom: 0.5rem;
+					color: var(--brand-primary-light);
+				}
+
+				p {
+					color: var(--lighter);
+					font-size: 0.9rem;
+					margin-bottom: 0.75rem;
+					line-height: 1.4;
+				}
+
+				ul {
+					list-style: none;
+					display: flex;
+					flex-wrap: wrap;
+					gap: 0.5rem;
+
+					li {
+						background: rgba(255, 255, 255, 0.1);
+						padding: 0.2rem 0.6rem;
+
+						font-size: 0.75rem;
+						color: var(--lighter);
+					}
+				}
+			}
+		}
+
+		.misEmprendimientos {
+			background-color: var(--light);
+			padding: 4rem 2rem;
+
+			.container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 3rem 7rem;
+				margin: 0 auto;
+				align-items: center;
+				justify-items: center;
+			}
+
+			h1 {
+				grid-column: 1 / -1;
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+
+			.emprendimiento-card img {
+				width: 200px;
+				height: auto;
+				object-fit: contain;
+			}
+		}
+
+		.newsletter {
+			display: none;
+		}
+
+		.newsletter-popup {
+			position: fixed;
+			bottom: 2rem;
+			left: 2rem;
+			background: linear-gradient(
+				135deg,
+				var(--brand-primary),
+				var(--brand-primary-dark)
+			);
+			border: 2px solid var(--brand-primary-light);
+
+			padding: 1.5rem;
+			width: 350px;
+			max-width: calc(100vw - 4rem);
+			z-index: 100;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+			animation: slideUp 0.5s ease-out;
+
+			.newsletter-close {
+				position: absolute;
+				top: 0.5rem;
+				right: 0.75rem;
+				background: none;
+				border: none;
+				color: var(--brand-primary-light);
+				font-size: 1.5rem;
+				cursor: pointer;
+				line-height: 1;
+
+				&:hover {
+					color: var(--light);
+				}
+			}
+
+			h2 {
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+				color: var(--brand-primary-light);
+			}
+
+			p {
+				font-size: 0.85rem;
+				color: var(--lighter);
+				margin-bottom: 1rem;
+			}
+
+			.newsletter-form {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75rem;
+
+				input {
+					padding: 0.75rem;
+					background: rgba(255, 255, 255, 0.1);
+					border: 1px solid rgba(255, 255, 255, 0.2);
+
+					color: var(--light);
+					font-size: 0.9rem;
+
+					&:focus {
+						outline: none;
+						border-color: var(--brand-primary-light);
+					}
+
+					&::placeholder {
+						color: var(--lighter);
+					}
+				}
+
+				.btn {
+					padding: 0.75rem;
+					font-size: 0.9rem;
+				}
+			}
+		}
+
+		@keyframes slideUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.speakers {
+			.speakers-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+			}
+
+			.speaker-card {
+				text-align: center;
+				transition: all 0.3s ease;
+
+				&:hover {
+					transform: scale(1.05);
+
+					.speaker-image img {
+						border-color: var(--brand-primary);
+					}
+				}
+
+				.speaker-image {
+					width: 200px;
+					height: 200px;
+					margin: 0 auto 1.5rem;
+
+					overflow: hidden;
+					border: 3px solid transparent;
+					transition: border-color 0.3s ease;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.3s ease;
+					}
+				}
+
+				h4 {
+					font-size: 1.25rem;
+					margin-bottom: 0.5rem;
+				}
+
+				p {
+					color: var(--brand-primary);
+					font-size: 0.875rem;
+				}
+			}
+		}
+
+		.schedule {
+			.timeline {
+				max-width: 800px;
+				margin: 0 auto;
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					width: 2px;
+					background: linear-gradient(
+						to bottom,
+						var(--brand-primary),
+						var(--brand-primary-dark)
+					);
+				}
+			}
+
+			.timeline-item {
+				display: flex;
+				gap: 2rem;
+				padding-left: 2rem;
+				margin-bottom: 2rem;
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: -6px;
+					top: 0;
+					width: 14px;
+					height: 14px;
+					background: var(--brand-primary);
+
+					border: 3px solid var(--dark);
+				}
+			}
+
+			.timeline-date {
+				min-width: 80px;
+				font-weight: 700;
+				color: var(--brand-primary);
+			}
+
+			.timeline-content {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+
+				padding: 1.5rem;
+				flex: 1;
+
+				h4 {
+					margin-bottom: 0.5rem;
+				}
+
+				p {
+					color: var(--brand-primary-light);
+					margin-bottom: 0.5rem;
+				}
+
+				span {
+					color: var(--lighter);
+					font-size: 0.875rem;
+				}
+			}
+		}
+
+		.location {
+			.location-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem;
+				align-items: center;
+
+				@media (max-width: 768px) {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.info-item {
+				display: flex;
+				gap: 1rem;
+				margin-bottom: 2rem;
+
+				svg {
+					color: var(--brand-primary);
+					flex-shrink: 0;
+				}
+
+				h4 {
+					font-size: 1rem;
+					margin-bottom: 0.5rem;
+				}
+
+				p {
+					color: var(--lighter);
+					line-height: 1.6;
+				}
+			}
+
+			.location-map {
+				overflow: hidden;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+		}
+
+		.contact {
+			display: none;
+		}
+
+		.contact-box {
+			position: fixed;
+			bottom: -5px;
+			left: 2rem;
+			width: 400px;
+			max-width: calc(100vw - 4rem);
+			z-index: 100;
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			background: rgba(152, 178, 250, 0.158);
+			border: 2px solid var(--brand-primary-light);
+			padding: 2rem;
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+			animation: slideUp 0.4s ease-out;
+			mix-blend-mode: luminosity;
+			animation: slideUp 0.4s ease-out;
+			background-color: #665ad7;
+
+			.contact-close {
+				position: absolute;
+				top: 0.75rem;
+				right: 1rem;
+				background: none;
+				border: none;
+				color: var(--brand-primary-light);
+				font-size: 1.5rem;
+				cursor: pointer;
+				line-height: 1;
+
+				&:hover {
+					color: var(--light);
+				}
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				margin-bottom: 0.75rem;
+				color: var(--brand-primary-light);
+			}
+
+			p {
+				color: var(--lighter);
+				font-size: 0.9rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+		img {
+			min-width: 100px;
+			height: auto;
+		}
+
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+
+			input,
+			select {
+				padding: 0.75rem 1rem;
+				background: rgba(255, 255, 255, 0.08);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+
+				color: var(--light);
+				font-size: 0.95rem;
+
+				&:focus {
+					outline: none;
+					border-color: var(--brand-primary-light);
+				}
+
+				&::placeholder {
+					color: var(--lighter);
+				}
+
+				option {
+					background: var(--brand-primary);
+					color: var(--light);
+				}
+			}
+
+			.btn {
+				margin-top: 0.5rem;
+				padding: 0.75rem;
+				justify-content: center;
+			}
+		}
+
+		.footer {
+			padding: 4rem 2rem 2rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+			.footer-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			.footer-brand {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+
+				img {
+					filter: brightness(0) invert(1);
+				}
+
+				p {
+					color: var(--lighter);
+				}
+			}
+
+			.footer-links {
+				display: flex;
+				gap: 2rem;
+
+				a {
+					color: var(--lighter);
+					text-decoration: none;
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: var(--brand-primary);
+					}
+				}
+			}
+
+			.footer-social {
+				display: flex;
+				gap: 1rem;
+
+				a {
+					width: 40px;
+					height: 40px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background: rgba(255, 255, 255, 0.05);
+
+					color: var(--lighter);
+					transition: all 0.3s ease;
+
+					&:hover {
+						background: var(--brand-primary);
+						color: white;
+					}
+				}
+			}
+
+			.footer-bottom {
+				text-align: center;
+				padding-top: 2rem;
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+				p {
+					color: var(--lighter);
+					font-size: 0.875rem;
+				}
+			}
+		}
+
+		@media (max-width: 768px) {
+			.navbar .nav-links {
+				display: none;
+			}
+
+			.hero-stats {
+				gap: 2rem !important;
+			}
+
+			.timeline::before {
+				left: 20px;
+			}
+
+			.timeline-item {
+				padding-left: 3rem;
+
+				&::before {
+					left: 14px;
+				}
+			}
+		}
+
+		.collage {
+			background: var(--light);
+			padding: 18rem 8rem;
+			overflow: hidden;
+			position: relative;
+
+			.collage-grid {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 2rem;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+				z-index: 1;
+			}
+
+			.collage-item {
+				position: relative;
+				transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+				will-change: transform;
+			}
+
+			.collage-img {
+				max-width: 900px;
+				border: 4px solid var(--darker);
+				transform: translateY(30px) scale(0.95);
+				opacity: 0;
+				transition:
+					transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+					opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+					box-shadow 0.3s ease;
+				margin-top: -30px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+				&.revealed {
+					transform: translateY(0) scale(1);
+					opacity: 1;
+				}
+
+				&:hover {
+					transform: scale(1.05) translateY(-10px);
+					box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+					z-index: 10;
+				}
+			}
+		}
+
+		.blog-section {
+			background: var(--brand-primary-light);
+			padding: 6rem 2rem;
+			color: var(--brand-primary);
+
+			h2 {
+				text-align: center;
+				font-size: clamp(2rem, 4vw, 3rem);
+				color: var(--brand-primary);
+				margin-bottom: 3rem;
+			}
+
+			.featured-post {
+				background: var(--light);
+				border-radius: 12px;
+				overflow: hidden;
+				margin-bottom: 3rem;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+
+				&:hover {
+					transform: translateY(-5px);
+					box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+				}
+
+				a {
+					display: flex;
+					flex-direction: column;
+					text-decoration: none;
+					color: inherit;
+
+					@media (min-width: 768px) {
+						flex-direction: row;
+					}
+				}
+
+				.featured-image {
+					flex: 1;
+					min-height: 300px;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.5s ease;
+					}
+				}
+
+				&:hover .featured-image img {
+					transform: scale(1.05);
+				}
+
+				.featured-content {
+					flex: 1;
+					padding: 3rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+
+					.featured-badge {
+						display: inline-block;
+						background: var(--brand-primary);
+						color: white;
+						padding: 0.3rem 0.8rem;
+						border-radius: 20px;
+						font-size: 0.8rem;
+						font-weight: 600;
+						margin-bottom: 1rem;
+						align-self: flex-start;
+					}
+
+					h3 {
+						font-size: 2rem;
+						color: var(--brand-primary);
+						margin-bottom: 1rem;
+						line-height: 1.2;
+					}
+
+					.blog-excerpt {
+						color: var(--brand-primary);
+						font-size: 1.1rem;
+						line-height: 1.6;
+						margin-bottom: 1.5rem;
+						display: -webkit-box;
+						-webkit-line-clamp: 4;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+					}
+
+					.blog-read-more {
+						color: var(--brand-primary);
+						font-weight: 700;
+						font-size: 1rem;
+					}
+				}
+			}
+
+			.blog-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.blog-card {
+				background: var(--light);
+				border-radius: 8px;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+				overflow: hidden;
+				transition: all 0.3s ease;
+
+				&:hover {
+					box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+					transform: translateY(-8px);
+				}
+
+				a {
+					text-decoration: none;
+					color: inherit;
+					display: block;
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+				}
+
+				.blog-image {
+					width: 100%;
+					height: 200px;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.3s ease;
+					}
+				}
+
+				&:hover .blog-image img {
+					transform: scale(1.05);
+				}
+
+				h3 {
+					font-size: 1.25rem;
+					color: var(--brand-primary);
+					padding: 1.5rem 1.5rem 0.5rem;
+					line-height: 1.3;
+				}
+
+				.blog-excerpt {
+					padding: 0 1.5rem;
+					color: var(--brand-primary);
+					font-size: 0.9rem;
+					line-height: 1.5;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					flex-grow: 1;
+
+					p {
+						margin: 0;
+					}
+				}
+
+				.blog-read-more {
+					display: block;
+					padding: 1.5rem;
+					color: var(--brand-primary);
+					font-weight: 600;
+					font-size: 0.9rem;
+					margin-top: auto;
+				}
+			}
+
+			.blog-loading {
+				text-align: center;
+				color: var(--brand-primary);
+				padding: 2rem;
+			}
+		}
+
+		.rotating-text {
+			display: inline-block;
+			position: relative;
+			min-width: 200px;
+			overflow: visible;
+			transition: opacity 0.2s ease;
+		}
+
+		.rotating-text::after {
+			content: '';
+			position: absolute;
+			right: -10px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 3px;
+			height: 80%;
+			background: var(--brand-blue);
+			animation: blink 0.8s infinite;
+		}
+
+		.diamond-container {
+			mix-blend-mode: lighten;
+			backdrop-filter: drop-shadow(2px 4px 6px black);
+			background: radial-gradient(
+				circle,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(255, 255, 255, 0) 30%
+			);
+		}
+
+		@keyframes blink {
+			0%,
+			50% {
+				opacity: 1;
+			}
+			51%,
+			100% {
+				opacity: 0;
+			}
+		}
+	</style>
+
+	<link
+		href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+		rel="stylesheet"
+	/>
+	<script
+		is:inline
+		src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+	></script>
+	<!-- ===================================================================== -->
+	<!-- DIAMOND CONTAINERS - POSITION CUSTOMIZATION -->
+	<!-- ===================================================================== -->
+	<!-- To change diamond positions, modify the style attributes below: -->
+	<!-- - top, bottom, left, right: control fixed positioning -->
+	<!-- - width, height: control diamond size -->
+	<!-- - transform: for centering (translate(-50%, -50%) with top:50%; left:50%) -->
+	<!-- ===================================================================== -->
+	<!-- Diamond movement with scroll is controlled by JavaScript below -->
+	<!-- ===================================================================== -->
+	<!-- Diamond 1: Top right - medium scroll speed -->
+	<div
+		class="diamond-container"
+		data-scroll-speed="0.3"
+		style="position: fixed; top: 20px; right: 20px; width: 400px; height: 400px; z-index: 50; pointer-events: none;">
+		<div
+			class="diamond-loading"
+			style="color: white; text-align: center; padding-top: 200px;">
+			Loading diamond 1...
+		</div>
+	</div>
+	<!-- Diamond 2: Top left - fast scroll speed -->
+	<div
+		class="diamond-container"
+		data-scroll-speed="0.4"
+		style="position: fixed; top: 20px; left: 20px; width: 380px; height: 380px; z-index: 50; pointer-events: none;">
+		<div
+			class="diamond-loading"
+			style="color: white; text-align: center; padding-top: 190px;">
+			Loading diamond 2...
+		</div>
+	</div>
+	<!-- Diamond 3: Bottom right - slow scroll speed -->
+	<div
+		class="diamond-container"
+		data-scroll-speed="0.15"
+		style="position: fixed; bottom: 20px; right: 20px; width: 360px; height: 360px; z-index: 50; pointer-events: none;">
+		<div
+			class="diamond-loading"
+			style="color: white; text-align: center; padding-top: 180px;">
+			Loading diamond 3...
+		</div>
+	</div>
+	<!-- Diamond 4: Bottom left - medium scroll speed -->
+	<div
+		class="diamond-container"
+		data-scroll-speed="0.25"
+		style="position: fixed; bottom: 20px; left: 20px; width: 340px; height: 340px; z-index: 50; pointer-events: none;">
+		<div
+			class="diamond-loading"
+			style="color: white; text-align: center; padding-top: 170px;">
+			Loading diamond 4...
+		</div>
+	</div>
+	<!-- Diamond 5: Center - very slow scroll speed (almost stationary) -->
+	<div
+		class="diamond-container"
+		data-scroll-speed="0.05"
+		style="position: fixed; top: calc(50vh - 200px); left: calc(50vw - 200px); width: 420px; height: 420px; z-index: 50; pointer-events: none;">
+		<div
+			class="diamond-loading"
+			style="color: white; text-align: center; padding-top: 210px;">
+			Loading diamond 5...
+		</div>
+	</div>
+	<script
+		is:inline
+		src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+	></script>
+	<script
+		is:inline
+		src="/diamond.js"
+	></script>
+	<script>
+		// AOS is loaded globally via CDN
+		if (typeof AOS !== 'undefined') {
+			AOS.init({
+				duration: 800,
+				easing: 'ease-out-cubic',
+				once: true,
+				offset: 50,
+			});
+		} else {
+			console.warn('AOS not loaded');
+		}
+
+		const rotatingEl = document.querySelector('.rotating-text');
+		if (rotatingEl) {
+			const words = rotatingEl.getAttribute('data-words')?.split(',') || [
+				'EMPRENDER',
+			];
+			let currentIndex = 0;
+
+			setInterval(() => {
+				currentIndex = (currentIndex + 1) % words.length;
+				rotatingEl.style.opacity = '0';
+				setTimeout(() => {
+					rotatingEl.textContent = words[currentIndex];
+					rotatingEl.style.opacity = '1';
+				}, 200);
+			}, 2500);
+		}
+
+		const statObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const el = entry.target;
+						const target = parseInt(el.getAttribute('data-target'));
+						animateNumber(el, target);
+						statObserver.unobserve(el);
+					}
+				});
+			},
+			{ threshold: 0.5 },
+		);
+
+		document.querySelectorAll('.stat-number').forEach((el) => {
+			statObserver.observe(el);
+		});
+
+		function animateNumber(el, target) {
+			const duration = 2000;
+			const steps = 60;
+			const stepTime = duration / steps;
+			let current = 0;
+			const increment = target / steps;
+
+			const timer = setInterval(() => {
+				current += increment;
+				if (current >= target) {
+					el.textContent = target;
+					clearInterval(timer);
+				} else {
+					el.textContent = Math.floor(current);
+				}
+			}, stepTime);
+		}
+
+		// URL de tu Google Apps Script
+		const GOOGLE_SCRIPT_URL =
+			'https://script.google.com/macros/s/AKfycbyuMXrd4-dxl5RzwJkXwfOR3C4HajzC2kz0AD2nhlUO3TYPmIU-aRDqqD19bypLPGbJ/exec';
+
+		const newsletterForm = document.getElementById('newsletter-form');
+		if (newsletterForm) {
+			newsletterForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const submitBtn = document.getElementById('newsletter-submit');
+				const originalText = submitBtn.textContent;
+				submitBtn.textContent = 'Enviando...';
+				submitBtn.disabled = true;
+
+				const formData = new FormData(newsletterForm);
+				const data = new URLSearchParams(formData);
+
+				fetch(GOOGLE_SCRIPT_URL, {
+					method: 'POST',
+					body: data,
+				})
+					.then((res) => res.json())
+					.then((response) => {
+						submitBtn.textContent = '¡Registrado!';
+						newsletterForm.reset();
+						setTimeout(() => {
+							submitBtn.textContent = originalText;
+							submitBtn.disabled = false;
+						}, 3000);
+					})
+					.catch((error) => {
+						console.error('Error!', error);
+						submitBtn.textContent = 'Error, intenta de nuevo';
+						submitBtn.disabled = false;
+						setTimeout(() => {
+							submitBtn.textContent = originalText;
+						}, 3000);
+					});
+			});
+		}
+
+		const contactForm = document.getElementById('contact-form');
+		if (contactForm) {
+			contactForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const submitBtn = document.getElementById('contact-submit');
+				const originalText = submitBtn.textContent;
+				submitBtn.textContent = 'Enviando...';
+				submitBtn.disabled = true;
+
+				const formData = new FormData(contactForm);
+				const data = new URLSearchParams(formData);
+
+				fetch(GOOGLE_SCRIPT_URL, {
+					method: 'POST',
+					body: data,
+				})
+					.then((res) => res.json())
+					.then((response) => {
+						submitBtn.textContent = '¡Registrado!';
+						contactForm.reset();
+						setTimeout(() => {
+							submitBtn.textContent = originalText;
+							submitBtn.disabled = false;
+						}, 3000);
+					})
+					.catch((error) => {
+						console.error('Error!', error);
+						submitBtn.textContent = 'Error, intenta de nuevo';
+						submitBtn.disabled = false;
+						setTimeout(() => {
+							submitBtn.textContent = originalText;
+						}, 3000);
+					});
+			});
+		}
+
+		// =====================================================================
+		// DIAMOND SCROLL MOVEMENT
+		// =====================================================================
+		// This code makes diamonds move with scroll for a parallax effect
+		// Each diamond has individual scroll speed via data-scroll-speed attribute
+		// Adjust values in HTML (0.05 = very slow, 0.5 = fast)
+		// =====================================================================
+		document.addEventListener('DOMContentLoaded', function () {
+			const diamondContainers = document.querySelectorAll('.diamond-container');
+
+			// Store original positions and scroll speeds
+			const diamondData = [];
+			diamondContainers.forEach((container, index) => {
+				// Get scroll speed from data attribute or use default
+				const scrollSpeed =
+					parseFloat(container.getAttribute('data-scroll-speed')) || 0.2;
+
+				// Parse original style values
+				const style = container.style;
+				const originalTop = style.top ? parseFloat(style.top) : null;
+				const originalBottom = style.bottom ? parseFloat(style.bottom) : null;
+				const originalLeft = style.left ? parseFloat(style.left) : null;
+				const originalRight = style.right ? parseFloat(style.right) : null;
+
+				// Determine positioning type
+				const hasTop = style.top && style.top.includes('px');
+				const hasBottom = style.bottom && style.bottom.includes('px');
+				const hasLeft = style.left && style.left.includes('px');
+				const hasRight = style.right && style.right.includes('px');
+
+				// For calc() values (like calc(50vh - 160px)), we need to compute them
+				let computedTop = originalTop;
+				let computedBottom = originalBottom;
+				let computedLeft = originalLeft;
+				let computedRight = originalRight;
+
+				// If values are calc(), compute them once
+				if (style.top && style.top.includes('calc')) {
+					container.style.top = style.top; // Ensure it's set
+					const rect = container.getBoundingClientRect();
+					computedTop = rect.top;
+				}
+				if (style.bottom && style.bottom.includes('calc')) {
+					container.style.bottom = style.bottom;
+					const rect = container.getBoundingClientRect();
+					computedBottom = window.innerHeight - rect.bottom;
+				}
+
+				diamondData[index] = {
+					scrollSpeed,
+					originalTop: computedTop,
+					originalBottom: computedBottom,
+					originalLeft: computedLeft,
+					originalRight: computedRight,
+					hasTop,
+					hasBottom,
+					hasLeft,
+					hasRight,
+					// Store original calc strings for recalculation on resize
+					originalTopString: style.top,
+					originalBottomString: style.bottom,
+					originalLeftString: style.left,
+					originalRightString: style.right,
+				};
+			});
+
+			function updateDiamondPositions() {
+				const scrollY = window.scrollY;
+
+				diamondContainers.forEach((container, index) => {
+					const data = diamondData[index];
+					const movement = scrollY * data.scrollSpeed;
+
+					// Apply vertical movement based on original positioning
+					if (data.hasTop && data.originalTop !== null) {
+						container.style.top = `${data.originalTop + movement}px`;
+					}
+					if (data.hasBottom && data.originalBottom !== null) {
+						container.style.bottom = `${data.originalBottom - movement}px`;
+					}
+
+					// Optional: Add slight horizontal movement for more dynamic effect
+					// Horizontal movement is 30% of vertical movement
+					const horizontalMovement = movement * 0.3;
+					if (data.hasLeft && data.originalLeft !== null) {
+						container.style.left = `${data.originalLeft + horizontalMovement}px`;
+					}
+					if (data.hasRight && data.originalRight !== null) {
+						container.style.right = `${data.originalRight - horizontalMovement}px`;
+					}
+				});
+			}
+
+			// Throttle scroll events for performance
+			let scrollTimeout;
+			window.addEventListener('scroll', function () {
+				if (!scrollTimeout) {
+					scrollTimeout = setTimeout(function () {
+						scrollTimeout = null;
+						updateDiamondPositions();
+					}, 16); // ~60fps
+				}
+			});
+
+			// Recalculate on window resize (for calc() values)
+			window.addEventListener('resize', function () {
+				diamondContainers.forEach((container, index) => {
+					const data = diamondData[index];
+					// Re-apply original calc strings and recompute
+					if (
+						data.originalTopString &&
+						data.originalTopString.includes('calc')
+					) {
+						container.style.top = data.originalTopString;
+						const rect = container.getBoundingClientRect();
+						data.originalTop = rect.top;
+					}
+					if (
+						data.originalBottomString &&
+						data.originalBottomString.includes('calc')
+					) {
+						container.style.bottom = data.originalBottomString;
+						const rect = container.getBoundingClientRect();
+						data.originalBottom = window.innerHeight - rect.bottom;
+					}
+				});
+				updateDiamondPositions();
+			});
+
+			// Initial position update
+			updateDiamondPositions();
+		});
+		// =====================================================================
+		// COLLAGE REVEAL ANIMATION
+		// =====================================================================
+		// This code adds 'revealed' class to collage images when they enter viewport
+		// Uses IntersectionObserver with staggered delays from data-reveal-delay attribute
+		// =====================================================================
+		document.addEventListener('DOMContentLoaded', function () {
+			const collageItems = document.querySelectorAll('.collage-img');
+			if (collageItems.length === 0) return;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const img = entry.target;
+							const delay =
+								parseInt(
+									img
+										.closest('.collage-item')
+										.getAttribute('data-reveal-delay'),
+								) || 0;
+
+							setTimeout(() => {
+								img.classList.add('revealed');
+							}, delay);
+
+							observer.unobserve(img);
+						}
+					});
+				},
+				{
+					threshold: 0.2,
+					rootMargin: '0px 0px -50px 0px',
+				},
+			);
+
+			collageItems.forEach((img) => observer.observe(img));
+		});
+		// =====================================================================
+		// COLLAGE SCROLL MOVEMENT
+		// =====================================================================
+		// This code makes collage images move with scroll for a parallax effect
+		// Each image has individual scroll speed via data-scroll-speed attribute
+		// =====================================================================
+		document.addEventListener('DOMContentLoaded', function () {
+			const collageItems = document.querySelectorAll('.collage-item');
+			if (collageItems.length === 0) return;
+
+			const itemData = [];
+			collageItems.forEach((item, index) => {
+				const scrollSpeed =
+					parseFloat(item.getAttribute('data-scroll-speed')) || 0.2;
+				const rect = item.getBoundingClientRect();
+				const top = rect.top + window.scrollY;
+				itemData[index] = { scrollSpeed, originalTop: top, item };
+			});
+
+			function updateCollagePositions() {
+				const scrollY = window.scrollY;
+				itemData.forEach((data) => {
+					const movement =
+						(scrollY - data.originalTop) * data.scrollSpeed * 0.1;
+					data.item.style.transform = 'translateY(' + movement + 'px)';
+				});
+			}
+
+			let scrollTimeout;
+			window.addEventListener('scroll', function () {
+				if (!scrollTimeout) {
+					scrollTimeout = setTimeout(function () {
+						scrollTimeout = null;
+						updateCollagePositions();
+					}, 16);
+				}
+			});
+
+			window.addEventListener('resize', function () {
+				collageItems.forEach((item, index) => {
+					const rect = item.getBoundingClientRect();
+					itemData[index].originalTop = rect.top + window.scrollY;
+				});
+				updateCollagePositions();
+			});
+
+			updateCollagePositions();
+		});
+		// =====================================================================
+	</script>
+</Layout>

@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["_variables.scss"],"sourcesContent":["$brand-blue: #dea193;\n$brand-blue-light: #d69971;\n$brand-blue-dark: #e08a76;\n\n$text-primary: #ffffff;\n$text-secondary: #94a3b8;\n$bg-dark: #0f172a;\n$bg-darker: #020617;\n\n$font-heading: 'Space Grotesk', sans-serif;\n$font-body: 'Inter', sans-serif;\n"],"file":"_variables.css"}

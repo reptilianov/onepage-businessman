@@ -1,0 +1,20 @@
+{
+	"name": "Bogart  Alberto",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"dependencies": {
+		"astro": "^4.0.0",
+		"sass": "^1.69.0",
+		"aos": "^2.3.4",
+		"three": "^0.160.0"
+	},
+	"overrides": {
+		"sass": "^1.80.0"
+	}
+}

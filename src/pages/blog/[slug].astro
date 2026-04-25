@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  let posts = [];
+  try {
+    const res = await fetch("http://soybogart.com/wp-json/wp/v2/posts?_embed&per_page=100");
+    if (res.ok) {
+      posts = await res.json();
+    }
+  } catch (e) {
+    console.warn('Could not fetch posts for getStaticPaths');
+  }
+  
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect('/');
+}
+---
+
+<Layout title={`${post.title.rendered} - Soy Bogart`}>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo">
+        <img src="/assets/svg/LogoBogartWhite.svg" alt="Alberto Bogart" />
+      </a>
+      <div class="nav-links">
+        <a href="/#about">Trayectoria</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#contact">Conozcamonos</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="blog-post">
+    {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+      <div class="post-hero">
+        <img 
+          src={post._embedded['wp:featuredmedia'][0].source_url}
+          alt={post.title.rendered}
+        />
+      </div>
+    )}
+    
+    <div class="post-content">
+      <a href="/#blog" class="back-link">← Volver al blog</a>
+      
+      <header class="post-header">
+        <h1 set:html={post.title.rendered} />
+        <div class="post-meta">
+          <time datetime={post.date}>
+            {new Date(post.date).toLocaleDateString('es-ES', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+        </div>
+      </header>
+
+      <div class="post-body" set:html={post.content.rendered} />
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="/assets/svg/LogoBogartWhite.svg" alt="Alberto Bogart" />
+          <p>Alberto Bogart - terapeuta de negocios 2026</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Alberto Bogart. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @import '../../styles/global.scss';
+
+  .error-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      color: var(--brand-primary);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--lighter);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
+    background: #0600ff24;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      filter: brightness(0) invert(1);
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+
+      a {
+        color: var(--lighter);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--light);
+        }
+      }
+    }
+  }
+
+  .blog-post {
+    padding-top: 80px;
+  }
+
+  .post-hero {
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--brand-primary-light);
+    }
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--light);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .post-meta {
+    color: var(--brand-primary);
+    font-size: 0.9rem;
+  }
+
+  .post-body {
+    color: var(--lighter);
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    :global(h2) {
+      color: var(--brand-primary-light);
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+    }
+
+    :global(h3) {
+      color: var(--brand-primary-light);
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    :global(p) {
+      margin-bottom: 1.5rem;
+    }
+
+    :global(img) {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    :global(a) {
+      color: var(--brand-primary);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--brand-primary-light);
+      }
+    }
+
+    :global(ul),
+    :global(ol) {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+
+      :global(li) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    :global(blockquote) {
+      border-left: 4px solid var(--brand-primary);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--brand-primary-light);
+    }
+  }
+
+  .footer {
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        filter: brightness(0) invert(1);
+        height: 40px;
+      }
+
+      p {
+        color: var(--lighter);
+      }
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      p {
+        color: var(--lighter);
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar .nav-links {
+      display: none;
+    }
+
+    .post-hero {
+      height: 40vh;
+    }
+
+    .post-content {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
