@@ -439,20 +439,18 @@ try {
 		</div>
 </section>
 
-	<section id="contact" class="contact-section">
-		<div class="container">
-			<h2>¿Listo para el <span class="gradient-text">Futuro</span>?</h2>
-			<form class="contact-form" id="contact-form">
-				<input type="text" name="nombre" placeholder="Tu nombre" required />
-				<input type="email" name="email" placeholder="Tu email" required />
-				<button type="submit" id="contact-submit" class="btn btn-primary">Registrarme</button>
-			</form>
-		</div>
-	</section>
+	<div id="contact" class="contact-box" style="display: block; position: fixed; bottom: -5px; left: 2rem; width: 400px; max-width: calc(100vw - 4rem); z-index: 100; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(152, 178, 250, 0.158); border: 2px solid var(--brand-primary-light); padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); mix-blend-mode: luminosity; background-color: #665ad7;">
+		<h2>¿Listo para el <span class="gradient-text">Futuro</span>?</h2>
+		<form class="contact-form" id="contact-form">
+			<input type="text" name="nombre" placeholder="Tu nombre" required />
+			<input type="email" name="email" placeholder="Tu email" required />
+			<button type="submit" id="contact-submit" class="btn btn-primary">Registrarme</button>
+		</form>
+	</div>
 
 	<section id="blog" class="blog-section">
 		<div class="container">
-			<h2 data-aos="fade-up">Entradas de Soy Bogart</h2>
+			<h2 data-aos="fade-up">Terapeuta de Negocios</h2>
 			{
 				posts.length > 0 ? (
 					<>
@@ -1337,15 +1335,6 @@ try {
 			display: none;
 		}
 
-		@media (min-width: 769px) {
-			.contact-box {
-				display: block;
-				opacity: 0;
-				visibility: visible;
-				animation: slideUp 0.5s ease-out 10s forwards;
-			}
-		}
-
 		.contact-box {
 			position: fixed;
 			bottom: -5px;
@@ -1361,33 +1350,20 @@ try {
 			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 			mix-blend-mode: luminosity;
 			background-color: #665ad7;
-
-			.contact-close {
-				position: absolute;
-				top: 0.75rem;
-				right: 1rem;
-				background: none;
-				border: none;
-				color: var(--brand-primary-light);
-				font-size: 1.5rem;
-				cursor: pointer;
-				line-height: 1;
-
-				&:hover {
-					color: var(--light);
-				}
-			}
+			opacity: 0;
+			visibility: visible;
+			animation: slideUp 0.5s ease-out 10s forwards;
 
 			h2 {
 				font-size: 1.5rem;
 				margin-bottom: 0.75rem;
 				color: var(--brand-primary-light);
 			}
+		}
 
-			p {
-				color: var(--lighter);
-				font-size: 0.9rem;
-				margin-bottom: 1.5rem;
+		@media (max-width: 768px) {
+			.contact-box {
+				display: none;
 			}
 		}
 		img {
