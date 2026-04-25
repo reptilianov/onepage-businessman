@@ -47,7 +47,7 @@ try {
 				class="display-1"
 				data-aos="fade-up"
 				data-aos-delay="100">
-				<span class="gradient-text">PREPÁRATE PARA</span>
+				<span class="gradient-text light-weight">PREPÁRATE PARA</span>
 				<span
 					class="rotating-text"
 					data-words="EMPRENDER,CRECER,INNOVAR,TRANSFORMAR,AVANZAR"
@@ -437,41 +437,20 @@ try {
 				</div>
 			</div>
 		</div>
+</section>
+
+	<section id="contact" class="contact-section">
+		<div class="container">
+			<h2>¿Listo para el <span class="gradient-text">Futuro</span>?</h2>
+			<form class="contact-form" id="contact-form">
+				<input type="text" name="nombre" placeholder="Tu nombre" required />
+				<input type="email" name="email" placeholder="Tu email" required />
+				<button type="submit" id="contact-submit" class="btn btn-primary">Registrarme</button>
+			</form>
+		</div>
 	</section>
 
-	<div
-		id="contact"
-		class="contact-box"
-		data-aos="zoom-in">
-		<h2>¿Listo para el <span class="gradient-text">Futuro</span>?</h2>
-		<form
-			class="contact-form"
-			id="contact-form">
-			<input
-				type="text"
-				name="nombre"
-				placeholder="Tu nombre"
-				required
-			/>
-			<input
-				type="email"
-				name="email"
-				placeholder="Tu email"
-				required
-			/>
-
-			<button
-				type="submit"
-				id="contact-submit"
-				class="btn btn-primary"
-				>Registrarme</button
-			>
-		</form>
-	</div>
-
-	<section
-		id="blog"
-		class="blog-section">
+	<section id="blog" class="blog-section">
 		<div class="container">
 			<h2 data-aos="fade-up">Entradas de Soy Bogart</h2>
 			{
@@ -744,6 +723,16 @@ try {
 				font-size: clamp(5em, 13vw, 9rem);
 				line-height: 1;
 				margin-bottom: 1rem;
+
+				.light-weight {
+					font-weight: 300;
+					font-family: 'Exo', sans-serif;
+				}
+
+				.rotating-text {
+					font-weight: 800;
+					font-family: 'Exo', sans-serif;
+				}
 			}
 
 			.hero-tagline {
@@ -1344,6 +1333,19 @@ try {
 			display: none;
 		}
 
+		.contact-section {
+			display: none;
+		}
+
+		@media (min-width: 769px) {
+			.contact-box {
+				display: block;
+				opacity: 0;
+				visibility: visible;
+				animation: slideUp 0.5s ease-out 10s forwards;
+			}
+		}
+
 		.contact-box {
 			position: fixed;
 			bottom: -5px;
@@ -1357,9 +1359,7 @@ try {
 			border: 2px solid var(--brand-primary-light);
 			padding: 2rem;
 			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-			animation: slideUp 0.4s ease-out;
 			mix-blend-mode: luminosity;
-			animation: slideUp 0.4s ease-out;
 			background-color: #665ad7;
 
 			.contact-close {
@@ -1510,6 +1510,55 @@ try {
 		@media (max-width: 768px) {
 			.navbar .nav-links {
 				display: none;
+			}
+
+			.contact-box {
+				display: none;
+			}
+
+			.contact-section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 4rem 2rem;
+				text-align: center;
+				background: var(--brand-primary);
+				width: 100%;
+
+				h2 {
+					font-size: 2rem;
+					color: var(--brand-primary-light);
+					margin-bottom: 1.5rem;
+				}
+
+				.contact-form {
+					width: 100%;
+					max-width: 400px;
+
+					input {
+						width: 100%;
+						padding: 1rem;
+						background: rgba(255, 255, 255, 0.1);
+						border: 1px solid rgba(255, 255, 255, 0.2);
+						color: var(--light);
+						font-size: 1rem;
+						border-radius: 0.5rem;
+
+						&:focus {
+							outline: none;
+							border-color: var(--brand-primary-light);
+						}
+
+						&::placeholder {
+							color: var(--lighter);
+						}
+					}
+
+					.btn {
+						width: 100%;
+						justify-content: center;
+					}
+				}
 			}
 
 			.hero-stats {
