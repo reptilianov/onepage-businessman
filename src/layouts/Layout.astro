@@ -33,7 +33,7 @@ const { title } = Astro.props;
 			crossorigin
 		/>
 		<link
-			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
@@ -44,5 +44,85 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-	@import '../styles/global.scss';
+	:root {
+		--brand-primary: #5864ed;
+		--brand-primary-light: #dfe2ff;
+		--brand-primary-dark: #2831b9;
+		--dark: #000000;
+		--light: #ffffff;
+		--ink: #111827;
+		--muted: #657083;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Inter', sans-serif;
+		background: var(--light);
+		color: var(--ink);
+		overflow-x: hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Exo', sans-serif;
+		font-weight: 800;
+		letter-spacing: 0;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0rem 2rem;
+		position: relative;
+	}
+
+	.container {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.container-wide {
+		padding: 3em;
+	}
+
+	.collage .container-wide img {
+		width: 50%;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1rem 2rem;
+		background: var(--brand-primary);
+		color: white;
+		text-decoration: none;
+		font-weight: 600;
+		border-radius: 0;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			background: var(--brand-primary-light);
+			transform: translateY(-2px);
+			box-shadow: 0 10px 40px rgba(var(--brand-primary), 0.4);
+		}
+	}
 </style>
